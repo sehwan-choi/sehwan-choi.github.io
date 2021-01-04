@@ -2,7 +2,7 @@
 layout: tag-blog
 title: Go
 slug: Go
-category: language
+category: Language
 menu: false
 order: 1
 ---
