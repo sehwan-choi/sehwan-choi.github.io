@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Java & Spring
-slug: Java & Spring
+title: Spring
+slug: Spring
 menu: true
 submenu: false
 order: 4
 description: >
-  Java & Spring
+  Spring
 ---
