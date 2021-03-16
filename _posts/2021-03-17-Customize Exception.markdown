@@ -209,4 +209,4 @@ CustomizeResponseEntityExceptionHandler.java
 
 위의 소스를 보면 Controller에서 UserNotFoundException 발생시 handleUserNotFoundExceptions로 나머지 Exception 발생시 handleAllExceptions로 예외처리를 하게 된다.
 
-> 참고 : https://jeong-pro.tistory.com/195
+> 참고 : [https://jeong-pro.tistory.com/195](https://jeong-pro.tistory.com/195)
