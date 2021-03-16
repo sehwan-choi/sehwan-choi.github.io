@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: C++
-slug: C++
+title: Cpp
+slug: cpp
 category: language
 menu: false
 order: 3
