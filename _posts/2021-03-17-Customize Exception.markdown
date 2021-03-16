@@ -41,7 +41,8 @@ if문으로 잡든 try-catch로 잡든 상위 메서드로 예외처리를 위�
 @ExceptionHandler 경우는 @Controller, @RestController가 적용된 Bean내에서 발생하는 예외를 잡아서 하나의 메서드에서 처리해주는 기능을 한다.
 
 ```c
-@RestController public class MyRestController { 
+@RestController 
+public class MyRestController { 
     ... 
     ... 
     @ExceptionHandler(NullPointerException.class) 
@@ -66,7 +67,8 @@ Controller, RestController에만 적용가능하다. (@Service같은 빈에서�
 예제를 보면서 테스트를 해보도록하자.
 
 ```c
-@RestController public class MyRestController { 
+@RestController 
+public class MyRestController { 
     @Autowired 
     private MyService myService; 
     @GetMapping("/hello") 
@@ -129,7 +131,8 @@ RuntimeException을 확장한 클래스로 CustomException을 만들었다.
 @ExceptionHandler가 하나의 클래스에 대한 것이라면, @ControllerAdvice는 모든 @Controller 즉, 전역에서 발생할 수 있는 예외를 잡아 처리해주는 annotation이다.
 
 ```c
-@RestControllerAdvice public class MyAdvice { 
+@RestControllerAdvice 
+public class MyAdvice { 
     @ExceptionHandler(CustomException.class) 
     public String custom() { 
         return "hello custom"; 
