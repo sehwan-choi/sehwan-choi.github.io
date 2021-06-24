@@ -2,7 +2,7 @@
 layout: post
 title:  "gradlew를 이용한 빌드방법"
 subtitle:   "gradlew를 이용한 빌드방법"
-date:   2021-06-25 10:51:27 +0900
+date:   2021-06-24 23:51:27 +0900
 categories: spring
 tags: spring java springboot gradlew build
 comments: true

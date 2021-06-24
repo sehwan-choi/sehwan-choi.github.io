@@ -17,6 +17,9 @@ comments: true
 	- [HashMap VS HashTable](#HashMap-VS-HashTable) 
 	- [HashTable VS ConcurrentHashMap](#HashTable-VS-ConcurrentHashMap) 
 	- [정리](#정리) 
+
+<br>
+
 ### HashMap
    HashMap은 synchronized 키워드가 없기 때문에 동기화가 보장되지 못한다.<br>
 (싱글 스레드 환경에서 사용하길) 따라서 동기화처리를 하지 않기 때문에 값을 찾는 속도가 상당히 빠르다.<br>
