@@ -1,7 +1,7 @@
 ---
 layout: list
 title: Spring
-slug: Spring
+slug: spring
 menu: true
 submenu: false
 order: 4
