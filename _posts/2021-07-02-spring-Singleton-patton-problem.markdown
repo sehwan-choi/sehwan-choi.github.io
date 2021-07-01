@@ -8,14 +8,14 @@ tags: spring java springboot SingletonPatton
 comments: true
 ---
 
-## hashTable VS hashMap VS ConcurrentHashMap
+## 스프링 싱글톤 패턴의 문제점
+<br>
 
 - 목차
 	- [싱글톤 패턴이란?](#싱글톤-패턴이란?) 
 	- [싱글톤 패턴 문제점](#싱글톤-패턴-문제점)
 	- [싱글톤 컨테이너란?](#싱글톤-컨테이너란?) 
 	- [싱글톤 방식의 주의점](#싱글톤-방식의-주의점) 
-	- [정리](#정리) 
 
 <br>
 
@@ -40,6 +40,7 @@ public class SingletonService {
     }
 }
 ```
+<br><br>
 
 ### 싱글톤 패턴 문제점
 <br>
@@ -61,6 +62,7 @@ public class SingletonService {
 
 ### 싱글톤 컨테이너란?
 <br>
+
 스프링 컨테이너는 싱글톤 패턴의 문제점을 해결하면서, 객체 인스턴스를 싱글톤(1개만 생성)으로 관리한다.
 지금까지 우리가 학습한 스프링 빈이 바로 싱글톤으로 관리되는 빈이다.
 - 스프링 컨테이너는 싱글턴 패턴을 적용하지 않아도, 객체 인스턴스를 싱글톤으로 관리한다.
@@ -99,7 +101,8 @@ Process finished with exit code 0
 
 <br><br>
 
-## 싱글톤 방식의 주의점
+### 싱글톤 방식의 주의점
+<br>
 싱글톤 패턴이든, 스프링 같은 싱글톤 컨테이너를 사용하든, 객체 인스턴스를 하나만 생성해서 공유하는 싱글톤 방식은 여러 클라이언트가 하나의 같은 객체 인스턴스를 공유하기 때문에 싱글톤 객체는 상태를 유지 (stateful)하게 설계하면 안된다.<br>
 **무상태(stateless)로** 설계해야 한다!<br>
 특정 클라이언트에 의존적인 필드가 있으면 안된다.
@@ -184,8 +187,4 @@ public class StatefulService {
 <br><br><br>
 ## References
 
-> [https://limkydev.tistory.com/40](https://limkydev.tistory.com/40)
-
-> [https://j-i-y-u.tistory.com/30](https://j-i-y-u.tistory.com/30)
-
-> [https://shlee0882.tistory.com/44](https://shlee0882.tistory.com/44)
+> __김영한의 스프링 핵심 원리 - 기본편__
