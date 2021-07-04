@@ -1,7 +1,7 @@
 ---
 layout: list
 title: Http
-slug: Http
+slug: http
 menu: true
 submenu: false
 order: 5
