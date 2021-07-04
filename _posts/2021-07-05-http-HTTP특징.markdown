@@ -2,7 +2,7 @@
 layout: post
 title:  "HTTP특징"
 subtitle:   "HTTP특징"
-date:   2021-07-05 12:35:27 +0900
+date:   2021-07-05 00:35:27 +0900
 categories: http
 tags: http client-server stateful stateless connectionless
 comments: true
@@ -12,7 +12,7 @@ comments: true
 <br>
 
 - 목차
-	- [HTTP란?](#http란?)
+	- [HTTP란?](#http란)
 	- [HTTP 역사](#http-역사)
 	- [HTTP 특징](#http-특징)
 		- [1. 클라이언트 서버 구조](#1-클라이언트-서버-구조)
