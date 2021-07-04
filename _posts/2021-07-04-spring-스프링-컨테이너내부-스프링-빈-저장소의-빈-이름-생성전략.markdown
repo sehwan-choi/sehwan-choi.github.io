@@ -12,10 +12,10 @@ comments: true
 <br>
 
 - 목차
-	- [ComponentScan 이란?](#ComponentScan-이란?)
-	- [@Bean이 스프링 빈 저장소에 어떤 이름으로 등록될까?](#@Bean이-스프링-빈-저장소에-어떤-이름으로-등록될까?)
-	- [ComponentScan시 스프링 빈 저장소에 어떤 이름으로 등록될까?](#ComponentScan시-스프링-빈-저장소에-어떤-이름으로-등록될까?)
-	- [@Autowired 의존관계 자동 주입](#@Autowired-의존관계-자동-주입)
+	- [ComponentScan 이란?](#componentscan-이란)
+	- [@Bean이 스프링 빈 저장소에 어떤 이름으로 등록될까?](#bean이-스프링-빈-저장소에-어떤-이름으로-등록될까)
+	- [ComponentScan시 스프링 빈 저장소에 어떤 이름으로 등록될까?](#componentscan시-스프링-빈-저장소에-어떤-이름으로-등록될까)
+	- [@Autowired 의존관계 자동 주입](#autowired-의존관계-자동-주입)
 	- [정리](#정리)
 <br>
 

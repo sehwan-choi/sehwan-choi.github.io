@@ -14,14 +14,14 @@ comments: true
 - 목차
 	- [조회 대상 빈이 2개 이상일 때 해결 방법](#조회-대상-빈이-2개-이상일-때-해결-방법) 
 	- [문제상황](#문제상황)
-	- [@Autowired 필드명 매칭](#@Autowired-필드명-매칭) 
-	- [@Qualifier 사용](#@Qualifier-사용) 
-	- [@Primary 사용](#@Primary-사용) 
+	- [@Autowired 필드명 매칭](#autowired-필드명-매칭) 
+	- [@Qualifier 사용](#qualifier-사용) 
+	- [@Primary 사용](#primary-사용) 
 	- [@우선순위](#우선순위) 
 
 <br>
 
-조회 대상 빈이 2개 이상일 때 해결 방법
+## 조회 대상 빈이 2개 이상일 때 해결 방법
 1. @Autowired 필드 명 매칭
 2. @Qualifier @Qualifier끼리 매칭 빈 이름 매칭
 3. @Primary 사용

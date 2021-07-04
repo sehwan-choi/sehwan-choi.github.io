@@ -12,9 +12,9 @@ comments: true
 
 - 목차
 	- [예외 처리 과정](#예외-처리-과정) 
-	- [@ExceptionHandler](#@ExceptionHandler)
-	- [@ControllerAdvice](#@ControllerAdvice) 
-	- [@ExceptionHandler @ControllerAdvice 동시사용](#@ExceptionHandler-@ControllerAdvice-동시사용)
+	- [@ExceptionHandler](#exceptionhandler)
+	- [@ControllerAdvice](#controlleradvice) 
+	- [@ExceptionHandler @ControllerAdvice 동시사용](#exceptionhandler-controlleradvice-동시사용)
 
 ## 예외 처리 과정
 프로그래밍에서 예외 처리는 아주 중요하면서도 어렵다.

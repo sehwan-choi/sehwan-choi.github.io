@@ -15,13 +15,13 @@ comments: true
 	- [문제상황](#문제상황)
 	- [스프링 빈의 라이프 사이클](#스프링-빈의-라이프-사이클) 
 	- [스프링에서 지원하는 다양한 생명주기 콜백](#스프링에서-지원하는-다양한-생명주기-콜백) 
-	- [인터페이스(InitializingBean, DisposableBean)](#인터페이스-(InitializingBean,-DisposableBean)) 
-	    - [초기화, 소멸 인터페이스 단점](#초기화,-소멸-인터페이스-단점) 
-	- [설정 정보에 초기화 메서드, 종료 메서드 지정](#설정-정보에-초기화-메서드,-종료-메서드-지정) 
+	- [인터페이스(InitializingBean, DisposableBean)](#인터페이스initializingbean-disposablebean) 
+	    - [초기화, 소멸 인터페이스 단점](#초기화-소멸-인터페이스-단점) 
+	- [설정 정보에 초기화 메서드, 종료 메서드 지정](#설정-정보에-초기화-메서드-종료-메서드-지정) 
 	    - [설정 정보 사용 특징](#설정-정보-사용-특징) 
 	    - [종료 메서드 추론](#종료-메서드-추론) 
-	- [애노테이션 @PostConstruct, @PreDestory](#애노테이션-@PostConstruct,-@PreDestory) 
-	    - [@PostConstruct, @PreDestory 애노테이션 특징](#@PostConstruct,-@PreDestory-애노테이션-특징) 
+	- [애노테이션 @PostConstruct, @PreDestory](#애노테이션-postconstruct-predestory) 
+	    - [@PostConstruct, @PreDestory 애노테이션 특징](#postconstruct-predestory-애노테이션-특징) 
 	- [정리](#정리) 
 <br>
 
