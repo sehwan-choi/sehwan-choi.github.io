@@ -3,8 +3,8 @@ layout: post
 title:  "HTTP 메서드"
 subtitle:   "HTTP 메서드"
 date:   2021-07-05 03:35:27 +0900
-categories: http
-tags: http method
+categories: spring
+tags: spring http method
 comments: true
 ---
 

@@ -3,8 +3,8 @@ layout: post
 title:  "HTTP특징"
 subtitle:   "HTTP특징"
 date:   2021-07-05 00:35:27 +0900
-categories: http
-tags: http client-server stateful stateless connectionless
+categories: spring
+tags: spring http client-server stateful stateless connectionless
 comments: true
 ---
 
