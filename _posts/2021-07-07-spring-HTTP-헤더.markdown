@@ -58,7 +58,7 @@ Content-Length: 3423__<br>
 HTTP 전송에 필요한 모든 부가정보
 -  예) 메시지 바디의 내용, 메시지 바디의 크기, 압축, 인증, 요청 클라이언트, 서버 정보, 캐시 관리 정보...
 - 표준 헤더가 너무 많음
-	- https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
+	- [https://en.wikipedia.org/wiki/List_of_HTTP_header_fields](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
 - 필요시 임의의 헤더 추가 가능
 	- helloworld: hihi
 <br><br>
