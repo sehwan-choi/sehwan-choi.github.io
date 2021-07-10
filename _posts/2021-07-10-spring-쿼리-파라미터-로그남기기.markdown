@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "쿼리 파라미터 로그남기기"
+subtitle:   "쿼리 파라미터 로그남기기"
+date:   2021-07-10 17:32:27 +0900
+categories: spring
+tags: spring query log
+comments: true
+---
+
+# 쿼리 파라미터 로그남기기
+
+<br>
+
+- 목차
+	- [application 설정](#application-설정)
+		- [결과](#결과)
+	- [외부 라이브러리 사용](#외부-라이브러리-사용)
+		- [설정 방법](#설정-방법)
+		- [결과](#결과)
+<br>
+
+JPA를 사용하면서 무슨값으로 쿼리가 되었는지 확인 해야할 순간이 있다. 아래와같이 파라미터가 ? 로 나오게 되면 무슨 값이 들어갔는지 모르기 때문에 쿼리 파라미터를 로그로 남기는 방법을 2개를 소개 한다.
+```
+Hibernate: 
+    insert 
+    into
+        member
+        (username, id) 
+    values
+        (?, ?)
+```
+<br><br>
+
+# application 설정
+
+application.yml 사용한다면 아래와 같이 logging.level.org.hibernate.type: trace로 변경 한후 재실행 하면 바로 반영이 된다.
+```
+logging:
+  level:
+    org.hibernate.type: trace
+```
+
+## 결과
+아래와 같이 binding parameter 로 어떤값이 들어가졌는지 확인할 수 있다.
+```
+Hibernate: 
+    insert 
+    into
+        member
+        (username, id) 
+    values
+        (?, ?)
+2021-07-10 17:08:02.529 TRACE 78564 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [memberA]
+2021-07-10 17:08:02.531 TRACE 78564 --- [           main] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [BIGINT] - [1]
+```
+<br><br>
+
+# 외부 라이브러리 사용
+
+아래 github의 라이브러리를 이용한다.
+> [https://github.com/gavlyukovskiy/spring-boot-data-source-decorator](https://github.com/gavlyukovskiy/spring-boot-data-source-decorator)
+
+## 설정 방법
+
+build.gradle에 아래 추가하면 된다.
+```
+implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6
+```
+<br><br>
+
+## 결과
+아래와 같이 어떤 파라미터값인지 확인할수 있다.
+```
+Hibernate: 
+    insert 
+    into
+        member
+        (username, id) 
+    values
+        (?, ?)
+2021-07-10 17:30:25.779  INFO 99656 --- [           main] p6spy                                    : #1625905825779 | took 0ms | statement | connection 3| url ~
+insert into member (username, id) values (?, ?)
+insert into member (username, id) values ('memberA', 1);
+2021-07-10 17:30:25.782  INFO 99656 --- [           main] p6spy                                    : #1625905825782 | took 0ms | commit | connection 3| url ~
+
+```
+
+<br><br><br>
+## References 및 사진 출처
+
+> __김영한의 실전! 스프링 부트와 JPA 활용1__
