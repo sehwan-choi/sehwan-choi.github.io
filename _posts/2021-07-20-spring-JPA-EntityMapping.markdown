@@ -295,4 +295,3 @@ public class Member {
 ## References 및 사진 출처
 
 > __김영한의 자바 ORM 표준 JPA 프로그래밍 - 기본편__
-https://gmlwjd9405.github.io/2019/08/03/reason-why-use-jpa.html
