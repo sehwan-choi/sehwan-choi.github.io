@@ -177,11 +177,10 @@ comments: true
 <br>
 
 ![그림1](https://sehwan-choi.github.io/assets/img/spring/JPA-MAPPING/jpa4.jpg)
+
  <br><br>
 
-
  # 양방향 연관관계
-
 
 <br>
 
