@@ -268,6 +268,7 @@ class B {
 
 - 테이블은 외래 키 하나로 두 테이블의 연관관계를 관리
 - MEMBER.TEAM_ID 외래 키 하나로 양방향 연관관계 가짐 (양쪽으로 조인할 수 있다.)
+
 ```SQL
 SELECT * 
 FROM MEMBER M
