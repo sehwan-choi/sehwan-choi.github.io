@@ -2,7 +2,7 @@
 layout: post
 title:  "spring JPA 연관관계 맵핑"
 subtitle:   "spring JPA 연관관계 맵핑"
-date:   2021-07-20 18:00:27 +0900
+date:   2021-08-04 01:00:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping
 comments: true
