@@ -73,6 +73,35 @@ comments: true
 - 가장 많이 사용하는 연관관계
 - 다대일의 반대는 일대다
 
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+    private String username;
+}
+
+@Entity
+public class Team {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "TEAM_ID")
+    private Long id;
+
+    private String name;
+}
+
+```
+
 <br>
 
 ## 다대일 양방향
@@ -81,6 +110,46 @@ comments: true
 
 - 외래 키가 있는 쪽이 연관관계의 주인
 - 양쪽을 서로 참조하도록 개발
+
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    //연관관계 주인이므로 JoinColumn사용
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+    private String username;
+}
+
+@Entity
+public class Team {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "TEAM_ID")
+    private Long id;
+
+    //members를 읽기전용으로 사용하게 된다.(수정불가능)
+    @OneToMany(mappedBy = "team")
+    private List<Members> membersList = new ArrayList<>();
+
+    private String name;
+}
+```
+
+<br>
+
+## 다대일 주요속성
+
+![그림1](https://sehwan-choi.github.io/assets/img/spring/JPA-MAPPING2/jpa13.jpg)
+
 
 <br><br>
 
@@ -101,6 +170,35 @@ comments: true
     - 연관관계 관리를 위해 추가로 UPDATE SQL 실행
 - 일대다 단방향 매핑보다는 다대일 양방향 매핑을 사용하자
 
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    private String username;
+}
+
+@Entity
+public class Team {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "TEAM_ID")
+    private Long id;
+
+    //Members테이블의 TEAM_ID(FK)를 관리해야 하기떄문에 TEAM_ID를 JoinColumn으로 설정
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID")
+    private List<Members> membersList = new ArrayList<>();
+
+    private String name;
+}
+```
+
 <br>
 
 ## 일대다 양방향
@@ -111,6 +209,46 @@ comments: true
 - @JoinColumn(insertable=false, updatable=false) 
 - 읽기 전용 필드를 사용해서 양방향 처럼 사용하는 방법
 - 다대일 양방향을 사용하자
+
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    private String username;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID" ,insertable = false, updatable = false)
+    private Team team;
+}
+
+@Entity
+public class Team {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "TEAM_ID")
+    private Long id;
+
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID")
+    private List<Members> membersList = new ArrayList<>();
+
+    private String name;
+}
+```
+위 코드에서 inserable = false, updatable = false를 사용하는 이유는, 지금 Team과 Members가 양방향 처럼 보이지만 사실은 단방향으로 서로를 참조하는 형태이다. 만약 inserable = false, updatable = false이 없다면 Members입장에서는 자신이 연관관계 주인이고, Team입장에서는 자신이 연관관계 주인이기 때문에 말도 안되는 현상이 발생하기 때문에 Members에 inserable = false, updatable = false를 추가함으로써 자신은 연관관계의 주인이 아니라는 것을 설정하게 된다(읽기전용). 위 코드에서는 Team이 연관관계의 주인이 된다. 사실 이 방법은 꼼수에 해당한다. 이런 맵핑은 공식적으로 존재하지 않기때문이다.
+
+<br>
+
+## 일대다 주요속성
+
+![그림1](https://sehwan-choi.github.io/assets/img/spring/JPA-MAPPING2/jpa14.jpg)
+
 
 <br><br>
 
@@ -133,6 +271,34 @@ comments: true
 
 - 다대일(@ManyToOne) 단방향 매핑과 유사
 
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    private String username;
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+}
+
+@Entity
+public class Locker {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "LOCKER_ID")
+    private Long id;
+
+    private String name;
+}
+```
+
 <br>
 
 > 주 테이블이란 기본적으로 많이 사용하고 많이 쿼리하는 테이블을 말함
@@ -145,6 +311,38 @@ comments: true
 
 - 다대일 양방향 매핑 처럼 외래 키가 있는 곳이 연관관계의 주인
 - 반대편은 mappedBy 적용
+
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    private String username;
+
+    //연관관계 주인이기 때문에 JoinColumn을 사용
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+}
+
+@Entity
+public class Locker {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "LOCKER_ID")
+    private Long id;
+
+    private String name;
+
+    @OneToOne(mappedBy = "locker")
+    private Members members;
+}
+```
 
 <br>
 
@@ -194,11 +392,39 @@ comments: true
 - 관계형 데이터베이스는 정규화된 테이블 2개로 다대다 관계를 표현할 수 없음
 - 연결 테이블을 추가해서 일대다, 다대일 관계로 풀어내야함
 
+
 <br>
 
 ![그림1](https://sehwan-choi.github.io/assets/img/spring/JPA-MAPPING2/jpa10.jpg)
 
 - 객체는 컬렉션을 사용해서 객체 2개로 다대다 관계 가능
+
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    private String username;
+
+    @ManyToMany
+    @JoinTable(name = "MEMBERS_PRODUCT")
+    private List<Product> products = new ArrayList<>();
+}
+
+@Entity
+public class Product {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "PRODUCT_ID")
+    private Long id;
+
+}
+```
 
 <br>
 
@@ -225,6 +451,55 @@ comments: true
 - 연결 테이블용 엔티티 추가(연결 테이블을 엔티티로 승격) 
 - 1:N, N:1의 연결관계로 만듬
 - @ManyToMany -> @OneToMany, @ManyToOne
+
+```java
+@Entity
+public class Members {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "MEMBERS_ID")
+    private Long id;
+
+    private String username;
+
+    @OneToMany(mappedBy = "member")
+    private List<Product> products = new ArrayList<>();
+}
+
+@Entity
+public class Product {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "PRODUCT_ID")
+    private Long id;
+
+    @OneToMany(mappedBy = "product")
+    private List<Orders> orders = new ArrayList<>();
+}
+
+@Entity
+public class Orders {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "ORDER_ID")
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "MEMBERS_ID")
+    private Members member;
+
+    @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID")
+    private Product product;
+
+    private int orderAmount;
+
+    private LocalDateTime orderDate;
+}
+```
 
 <br><br><br>
 ## References 및 사진 출처
