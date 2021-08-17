@@ -64,6 +64,7 @@ getReference로 데이터를 가져온경우 객체 내부에는 아무값이 �
 - 프록시 객체는 처음 사용할 때 한 번만 초기화
 - 프록시 객체를 초기화 할 때, 프록시 객체가 실제 엔티티로 바뀌는 것은 아님, 초
 기화되면 프록시 객체를 통해서 실제 엔티티에 접근 가능
+
 ```java
 {
     ...
@@ -87,12 +88,14 @@ before findMember = class jpabook.jpashop.domain.Member$HibernateProxy$ChMRPTyA
 findMember.name = Name
 after findMember = class jpabook.jpashop.domain.Member$HibernateProxy$ChMRPTyA
 ```
+
 위 코드에서 프록시객체가 초기화 되었다고 해서 실제 Entity로 변경되는 것이 아니다.
 
 <br>
 
 - 프록시 객체는 원본 엔티티를 상속받음, 따라서 타입 체크시 주의해야함 (== 비
 교 실패, 대신 instance of 사용) 
+
 ```java
 {   
     ...
@@ -116,6 +119,7 @@ refMember = class jpabook.jpashop.domain.Member$HibernateProxy$QQZzFeqB
 member = class jpabook.jpashop.domain.Member
 member == refMember : false
 ```
+
 ```java
 {
     ...
@@ -130,6 +134,7 @@ refMember = class jpabook.jpashop.domain.Member$HibernateProxy$2HCUTJJp
 member = class jpabook.jpashop.domain.Member
 instanceof : true
 ```
+
 위 코드와 같이 타입이 다르기 때문에 == 로 비교를 한다면 false가 나온다. <br> 그렇기 때문에 타입 비교시 instance of 를 사용한다.
 
 <br>
@@ -143,6 +148,7 @@ instanceof : true
 JPA에서는 하나의 트랜잭션의 영속성 컨텍스트에서 가져온 데이터라면 가장 최초로 가져온 객체 타입으로 반환을 한다. 아래소스를 보자
 
 - Proxy 객체 조회를 먼저한다면??
+
 ```java
 {
     ...
@@ -159,6 +165,7 @@ findMember = class jpabook.jpashop.domain.Member$HibernateProxy$VkKhF8bm
 ```
 
 - Find로 Member 객체 조회를 먼저한다면??
+
 ```java
 {
     ...
@@ -184,6 +191,7 @@ refMember = class jpabook.jpashop.domain.Member
 - 영속성 컨텍스트의 도움을 받을 수 없는 준영속 상태일 때, 프록시를 초기화하면
 문제 발생
 (하이버네이트는 org.hibernate.LazyInitializationException 예외를 터트림)
+
 ```java
 {
     ...
@@ -204,6 +212,7 @@ org.hibernate.LazyInitializationException: could not initialize proxy [jpabook.j
 	at jpabook.jpashop.jpaMain.main(jpaMain.java:33)
 
 ```
+
 위 코드와 같이 refMember를 사용하기 전에 준영속 상태로 만든다면 Exception이 발생한다.(detach, clear 사용시)
 
 <br>
@@ -211,6 +220,7 @@ org.hibernate.LazyInitializationException: could not initialize proxy [jpabook.j
 ## 프록시 확인
 
 - 프록시 인스턴스의 초기화 여부 확인 PersistenceUnitUtil.isLoaded(Object entity) 
+
 ```java
 {
     ...
@@ -226,6 +236,7 @@ before isLoaded : false
 refMember name = Name
 after isLoaded : true
 ```
+
 <br>
 
 - 프록시 클래스 확인 방법
@@ -233,6 +244,7 @@ entity.getClass().getName() 출력(..javasist.. or
 HibernateProxy…) 
 - 프록시 강제 초기화
 org.hibernate.Hibernate.initialize(entity); 
+
 ```java
 {
     ...
