@@ -200,7 +200,7 @@ CASCADE 적용시 부모 객체인 parent만 persist한다면 연관된 child �
 
 고아객체란 부모 엔티티와 연관관계가 끊어진 자식을 말한다. <br>
 
-- orphanRemoval = true 옵션으로 사용가능하다.
+- orphanRemoval = true 옵션으로 고아객체를 자동으로 삭제할수 있다.
     - 예) 
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL, orphanRemoval = true)
 
