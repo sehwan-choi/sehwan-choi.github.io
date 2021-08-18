@@ -234,10 +234,6 @@ member item count = 10
 - JPQL fetch 조인이나, 엔티티 그래프 기능을 사용해라!
 - 즉시 로딩은 상상하지 못한 쿼리가 나간다.
 
-<br><br>
-
-<br><br>
-
 <br><br><br>
 ## References 및 사진 출처
 
