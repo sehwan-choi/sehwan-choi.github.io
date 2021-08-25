@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "spring JPA JPQL 프로젝션과 페이징"
-subtitle:   "spring JPA JPQL 프로젝션과 페지이"
+subtitle:   "spring JPA JPQL 프로젝션과 페이징"
 date:   2021-08-25 21:00:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping JPQL 프로젝션 페이징
