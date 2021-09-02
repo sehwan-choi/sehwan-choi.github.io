@@ -2,7 +2,7 @@
 layout: post
 title:  "spring JPA JPQL 조건식 Case"
 subtitle:   "spring JPA JPQL 조건식 Case"
-date:   2021-09-02 10:30:27 +0900
+date:   2021-09-01 10:30:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping JPQL Case
 comments: true
