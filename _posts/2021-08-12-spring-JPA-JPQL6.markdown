@@ -74,7 +74,8 @@ s = ab
 
 ## SUBSTRING 
 
-문자열 자르기
+문자열 자르기<br>
+전체 문자열에서 n번째 부터 m개만큼 잘려진 문자열( substring(문자열, n,m) ) 반환
 
 ```java
 
