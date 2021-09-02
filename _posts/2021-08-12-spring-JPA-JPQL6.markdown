@@ -32,6 +32,8 @@ comments: true
 
 ## CONCAT 
 
+문자열 이어붙이기
+
 ```java
 
 public class JpqlNativeFuncMain {
@@ -72,6 +74,8 @@ s = ab
 
 ## SUBSTRING 
 
+문자열 자르기
+
 ```java
 
 public class JpqlNativeFuncMain {
@@ -108,6 +112,8 @@ s = emb
 <br>
 
 ## TRIM 
+
+공백 제거
 
 ```java
 
@@ -147,6 +153,8 @@ s = trimMember
 
 ## LOWER 
 
+문자열을 소문자로 변환
+
 ```java
 
 public class JpqlNativeFuncMain {
@@ -185,6 +193,8 @@ s = abcde
 
 ## UPPER 
 
+문자열을 대문자로 변환
+
 ```java
 
 public class JpqlNativeFuncMain {
@@ -221,6 +231,8 @@ s = ABCDE
 <br>
 
 ## LENGTH 
+
+문자열 길이 구하기
 
 ```java
 
@@ -260,6 +272,9 @@ s = 6
 
 ## LOCATE 
 
+일치하는 문자열이 있는지 확인 <br>
+일치하는 문자열이 위치하는 번째수(Integer), 일치하는 문자열이 없는경우 0 반환
+
 ```java
 
 public class JpqlNativeFuncMain {
@@ -297,6 +312,8 @@ s = 4
 <br>
 
 ## ABS 
+
+절대값
 
 ```java
 
@@ -336,6 +353,8 @@ s = 3
 
 ## SQRT 
 
+제곱근
+
 ```java
 
 public class JpqlNativeFuncMain {
@@ -374,6 +393,9 @@ s = 4.0
 
 ## MOD 
 
+나머지 구하기 <br>
+m을 n으로 나누어 남은 값을 반환한다. (Mod(m,n) 과 같이 사용)
+
 ```java
 
 public class JpqlNativeFuncMain {
@@ -411,6 +433,8 @@ s = 2
 <br>
 
 ## SIZE, INDEX(JPA 용도)
+
+SIZE : JPA가 지원하는 함수로 연관관계가 있는 엔티티의 개수를 확인할 수 있다.
 
 ```java
 
@@ -456,13 +480,11 @@ s = 1
 
 # 사용자 정의함수
 
-사용자 정의함수란 예를 들어 now() 함수를 사용하고 싶은데, JPA는 DB종속 적이지 않기 때문에 now()라는 함수를 지원하지 않는다. <br> 
-그렇기 때문에 직접 now()함수를 등록하여 사용할수 있다. <br>
-ex). MySQL에서 지원하는 now()함수를 사용하고 싶은데 JPA 기본함수 에서는 now() 지원하지 않기 때문에, 직접 now()함수를 등록하여 사용한다.
+사용자 정의함수란 예를 들어 MySQL에서 지원하는 now() 함수를 사용하고 싶은데, JPA는 DB종속 적이지 않기 때문에 now()라는 함수를 지원하지 않는다. 그래서 직접 now()함수를 등록하여 사용해야 한다. <br>
 
 <br>
 
-> DB Dialect에서는 대부분의 함수를 지원한다.
+> 참고 : DB Dialect에서는 대부분의 함수를 지원한다.
 
 <br>
 
