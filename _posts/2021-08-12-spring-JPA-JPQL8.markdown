@@ -12,7 +12,13 @@ comments: true
 <br>
 
 - 목차
-	- [](#)
+	- [Fetch Join](#fetch-join)
+	- [엔티티 fetch join](#엔티티-fetch-join)
+	- [컬렉션 fetch join](#컬렉션-fetch-join)
+	- [fetch join과 DISTINCT](#fetch-join과-distinct)
+	- [fetch join과 일반 join의 차이](#fetch-join과-일반-join의-차이)
+	- [fetch join의 특징과 한계](#fetch-join의-특징과-한계)
+	- [정리](#정리)
     
 <br>
 
@@ -325,6 +331,7 @@ teamname = TeamB
 # fetch join과 일반 join의 차이
 
 - 일반 조인 실행시 연관된 엔티티를 함께 조회하지 않음(지연 로딩)
+
 ```
 [JPQL]
 select t
@@ -339,6 +346,7 @@ SELECT T.*
 <br>
 
 - 페치 조인 실행시 연관된 엔티티도 함께 조회(즉시 로딩)
+
 ```
 [JPQL]
 select m 
@@ -354,7 +362,7 @@ JPQL은 결과를 반환할 때 연관관계는 고려하지 않는다. 단지 S
 
 <br>
 
-# 페치 조인의 특징과 한계
+# fetch join의 특징과 한계
 
 - 페치 조인 대상에는 별칭을 줄 수 없다. 
 - 하이버네이트는 가능, 가급적 사용하면 안된다.
