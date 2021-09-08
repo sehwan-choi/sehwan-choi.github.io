@@ -432,6 +432,9 @@ public class FetchJoinMain {
 - 결과
 
 ```
+...
+WARN org.hibernate.hql.internal.ast.QueryTranslatorImpl - HHH000104: firstResult/maxResults specified with collection fetch; applying in memory! <- 경고 문구가 출력된다.
+...
 select
     team0_.TEAM_ID as team_id1_4_0_,
     members1_.MEMBER_ID as member_i1_1_1_,
