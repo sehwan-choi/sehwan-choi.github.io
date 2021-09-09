@@ -136,7 +136,7 @@ public class Member {
 Member.findByUsername failed because of: org.hibernate.hql.internal.ast.QuerySyntaxException: Memberqqq is not mapped [select m from Memberqqq m where m.username = :username]
 ```
 
-우의 Exception이 발생한다.
+위의 Exception이 발생한다.
 
 <br><br><br>
 ## References 및 사진 출처
