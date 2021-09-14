@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "spring JPA JQPL 지연 로딩과 조회 성능 최적화"
-subtitle:   "spring JPA JPQL 지연 로딩과 조회 성능 최적화"
+title:  "spring JPA 지연 로딩과 조회 성능 최적화"
+subtitle:   "spring JPA 지연 로딩과 조회 성능 최적화"
 date:   2021-09-13 02:31:27 +0900
 categories: spring
-tags: spring JPA ORM Mapping JPQL 지연 로딩과 조회 성능 최적화
+tags: spring JPA ORM Mapping 지연 로딩과 조회 성능 최적화
 comments: true
 ---
 
@@ -22,6 +22,14 @@ comments: true
 <br>
 
 # 지연 로딩과 조회 성능 최적화
+
+<br>
+
+- 도메인 모델
+
+![그림1](https://sehwan-choi.github.io/assets/img/spring/JPA2/jpa1.jpg)
+
+위 사진은 아래에서 사용될 도메인 모델이다.
 
 <br>
 
@@ -80,7 +88,7 @@ public class OrderSImpleApiController {
 ```java
 @GetMapping("/api/v2/simple-orders")
 public Result ordersV2() {
-    List<Order> orders = orderRepository.findAllByString(new OrderSearch());
+    List<Order> all = orderRepository.findAll();
     List<SimpleOrderDto> collect = orders.stream().map(m -> new SimpleOrderDto(m)).collect(Collectors.toList());
 
     return new Result(collect);
