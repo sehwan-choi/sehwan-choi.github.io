@@ -2,7 +2,7 @@
 layout: post
 title:  "spring JPA 컬렉션 조회 최적화"
 subtitle:   "spring JPA 컬렉션 조회 최적화"
-date:   2021-09-13 02:31:27 +0900
+date:   2021-09-15 04:31:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping 컬렉션 조회 최적화
 comments: true
