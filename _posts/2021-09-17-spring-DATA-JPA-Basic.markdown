@@ -80,4 +80,4 @@ JpaRepository (+ 추가로 JPA에 특화된 기능 제공)
 <br><br><br>
 ## References 및 사진 출처
 
-> __김영한의 실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화__
+> __김영한의 실전! 스프링 데이터 JPA__
