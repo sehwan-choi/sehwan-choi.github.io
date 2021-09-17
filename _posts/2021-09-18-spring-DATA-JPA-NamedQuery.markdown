@@ -12,7 +12,7 @@ comments: true
 <br>
 
 - 목차
-	- [JPA NamedQuery](#JPA NamedQuery)
+	- [JPA NamedQuery](#jpa-namedquery)
     
 <br>
 
