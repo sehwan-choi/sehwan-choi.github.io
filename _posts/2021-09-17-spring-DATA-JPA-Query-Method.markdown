@@ -115,6 +115,7 @@ public void findByUsernameAndAgeGreaterThen() {
 
 - 스프링 데이터 JPA 공식 문서 참고
 
+> [https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 
 <br><br>
 
