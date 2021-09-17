@@ -47,7 +47,7 @@ public class Member {
 }
 ```
 
-위와 같이 @NamedQuery 어노테이션으로 Named 쿼리 정의한다.
+위와 같이 @NamedQuery 어노테이션으로 Named 쿼리 정의하고 사용할 때는 name에 설정된 이름 위 메소드에서는 "Member.findByUsername" 를 가져다 사용하면 된다.
 
 <br>
 
