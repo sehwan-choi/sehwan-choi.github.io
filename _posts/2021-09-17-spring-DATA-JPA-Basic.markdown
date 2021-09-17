@@ -2,7 +2,7 @@
 layout: post
 title:  "spring Data JPA"
 subtitle:   "spring Data JPA"
-date:   2021-09-17 022:45:27 +0900
+date:   2021-09-17 02:45:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping String-Data-JPA
 comments: true
