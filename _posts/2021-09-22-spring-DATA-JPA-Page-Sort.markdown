@@ -54,7 +54,7 @@ public class MemberController {
 - 요청 파라미터에 size, page 사용
 
 ```
-GET 127.0.0.1:8080/members?page=0&size=10
+GET 127.0.0.1:8080/members?page=0&size=3
 
 {
     "content": [
