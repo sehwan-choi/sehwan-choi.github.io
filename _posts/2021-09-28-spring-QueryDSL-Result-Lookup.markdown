@@ -26,7 +26,7 @@ fetch() : 리스트 조회, 데이터 없으면 빈 리스트 반환
 
 ```java
 @Test
-public void resultFetch() {
+public void fetch() {
 
 	// 멤버를 모두 조회
 	List<Member> fetch = queryFactory
@@ -63,7 +63,7 @@ fetchOne() : 단 건 데이터 조회한다. <br>
 
 ```java
 @Test
-public void resultFetch() {
+public void fetchOne() {
 
 	// 단건 조회
 	Member fetchOne = queryFactory
@@ -119,7 +119,7 @@ public abstract class FetchableQueryBase<T, Q extends FetchableQueryBase<T, Q>>
 
 ```java
 @Test
-public void resultFetch() {
+public void fetchFirst() {
 
 	// 처음 한 건 조회
 	Member fetchFirst = queryFactory
@@ -157,7 +157,7 @@ fetchResults() : 페이징 정보, 내부 데이터, total count 를 조회한�
 
 ```java
 @Test
-public void resultFetch() {
+public void fetchResults() {
 
 	// 페이징에서 사용
 	QueryResults<Member> result = queryFactory
@@ -209,7 +209,7 @@ fetchCount() : count 쿼리로 변경해서 count를 조회한다.
 
 ```java
 @Test
-public void resultFetch() {
+public void fetchCount() {
 	// count 조회
 	long count = queryFactory
 			.selectFrom(member)
