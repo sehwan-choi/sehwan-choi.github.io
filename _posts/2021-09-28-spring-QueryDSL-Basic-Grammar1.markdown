@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "spring Querydsl 기본문법 QType"
+title:  "spring Querydsl 기본문법 - QType"
 subtitle:   "spring Querydsl 기본문법 QType"
 date:   2021-09-28 01:42:27 +0900
 categories: spring
@@ -189,4 +189,4 @@ where
 <br><br><br>
 ## References 및 사진 출처
 
-> __김영한의 실전! 스프링 데이터 JPA__
+> __김영한의 실전! Querydsl__

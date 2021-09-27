@@ -185,4 +185,4 @@ git Repository 생성시 자동으로 .gitignore 파일에 build 경로가 포�
 <br><br><br>
 ## References 및 사진 출처
 
-> __김영한의 실전! 스프링 데이터 JPA__
+> __김영한의 실전! Querydsl__
