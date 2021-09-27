@@ -171,7 +171,7 @@ public class QMember extends EntityPathBase<Member> {
 }
 ```
 
-Item Entity를 상속받아 뭔가를 하는 클래스임을 확인할 수 있다. <br>
+Member Entity를 상속받아 뭔가를 하는 클래스임을 확인할 수 있다. <br>
 
 > 주의 ! <br>
 Entity가 변경되었다면 이 과정을 다시 수행해서 QEntity가 제대로 생성될 수 있게 해야합니다. <br>
