@@ -108,6 +108,18 @@ public class QuerydslBasicTest {
 
 <br><br>
 
+> 만일 QMember가 없다고 에러가 나오는경우!
+
+![그림1](https://sehwan-choi.github.io/assets/img/spring/QueryDSL/jpa1.jpg)
+
+위 사진과 같이 우측 Gradle -> qureydsl -> Tasks -> other -> compileQuerydsl을 더블클릭 하게 되면 
+
+![그림1](https://sehwan-choi.github.io/assets/img/spring/QueryDSL/jpa2.jpg)
+
+위 사진과 같이 프로젝트 build -> generated -> querydsl 하위에 QMember가 생긴다.
+
+<br><br>
+
 # 비교
 
 JQPL은 query문이 문자열로 되어있기 때문에, 컴파일 시점에서 에러를 확인 하기 어렵다. 또한 파라미터 바인딩도 문자열로 되어있기 때문에 사용자가 직접 API를 호출하기 전까지는 에러가 발생하는지 모른다. <br>
