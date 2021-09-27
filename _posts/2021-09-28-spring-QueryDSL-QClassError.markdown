@@ -12,7 +12,7 @@ comments: true
 <br>
 
 - 목차
-	- [cannot find symbol](#cannot find symbol)
+	- [cannot find symbol](#cannot-find-symbol)
     
 <br>
 
