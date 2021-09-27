@@ -2,7 +2,7 @@
 layout: post
 title:  "spring JPQL Querydsl 문법비교"
 subtitle:   "spring JPQL vs Querydsl"
-date:   2021-09-27 19:29:27 +0900
+date:   2021-09-26 19:29:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping QueryDSL
 comments: true

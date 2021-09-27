@@ -2,7 +2,7 @@
 layout: post
 title:  "spring Querydsl 기본문법 - 검색 조건 쿼리"
 subtitle:   "spring Querydsl 검색 조건 쿼리"
-date:   2021-09-28 02:22:27 +0900
+date:   2021-09-27 16:22:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping QueryDSL
 comments: true

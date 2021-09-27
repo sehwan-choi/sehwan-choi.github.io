@@ -2,7 +2,7 @@
 layout: post
 title:  "spring Querydsl 기본문법 - 결과 조회"
 subtitle:   "spring Querydsl 기본문법 - 결과 조회"
-date:   2021-09-28 02:46:27 +0900
+date:   2021-09-27 19:46:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping QueryDSL ResultLookup
 comments: true

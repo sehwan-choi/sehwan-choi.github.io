@@ -2,7 +2,7 @@
 layout: post
 title:  "spring Querydsl 설정"
 subtitle:   "spring Querydsl 설정"
-date:   2021-09-28 01:42:27 +0900
+date:   2021-09-26 20:42:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping QueryDSL Setting
 comments: true

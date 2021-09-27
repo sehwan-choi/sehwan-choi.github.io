@@ -2,7 +2,7 @@
 layout: post
 title:  "spring Querydsl 기본문법 - 정렬"
 subtitle:   "spring Querydsl 기본문법 - 정렬"
-date:   2021-09-24 03:15:27 +0900
+date:   2021-09-26 21:15:27 +0900
 categories: spring
 tags: spring JPA ORM Mapping QueryDSL Sort
 comments: true
