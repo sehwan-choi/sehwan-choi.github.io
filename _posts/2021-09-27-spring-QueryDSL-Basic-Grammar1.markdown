@@ -27,7 +27,7 @@ comments: true
 ## 별칭 직접 지정
 
 ```java
-QMember qMember = new QMember("m"); //별칭 직접 지정
+QMember qMember = new QMember("aaaba"); //별칭 직접 지정
 ```
 
 별칭을 직접 지정하게 되면, 지정한 별칭으로 쿼리가 실행된다.
