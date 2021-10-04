@@ -267,7 +267,7 @@ username = member2 age = 20 rank = 2
 username = member3 age = 30 rank = 1
 ```
 
-위 코드와 같이 Querydsl은 자바 코드로 작성하기 때문에 rankPath 처럼 복잡한 조건을 변수로 선언해서 select 절, orderBy 절에서 함께 사용할 수 있다.
+위 코드와 같이 Querydsl은 자바 코드로 작성하기 때문에 rankPath 처럼 복잡한 조건을 변수로 선언해서 select 절, orderBy 절에서 함께 사용할 수 있다. 하지만 DB에서는 데이터만 가져오는 용도로 사용하고 데이터 가공은 Application이나 presentation에서 하는것이 좋다고 생각한다. 만약 어쩔수 없다면 case를 쓰겠지만.
 
 <br><br><br>
 ## References 및 사진 출처
