@@ -42,6 +42,36 @@ public void aggregation() {
 }
 ```
 
+- 결과
+
+```SQL
+JPQL :
+select
+	count(member1),
+	sum(member1.age),
+	avg(member1.age),
+	max(member1.age),
+	min(member1.age) 
+from
+	Member member1
+
+SQL :
+select
+	count(member0_.member_id) as col_0_0_,
+	sum(member0_.age) as col_1_0_,
+	avg(cast(member0_.age as double)) as col_2_0_,
+	max(member0_.age) as col_3_0_,
+	min(member0_.age) as col_4_0_ 
+from
+	member member0_
+
+count = 4
+age sum = 100
+age avg = 25.0
+age max = 40
+age min = 10
+```
+
 JPQL이 제공하는 모든 집합 함수를 제공한다.
 
 <br><br>
@@ -67,6 +97,38 @@ public void group() {
 	System.out.println("name = " + teamB.get(team.name));
 	System.out.println("    age avg = " + teamB.get(member.age.avg()));
 }
+```
+
+- 결과
+
+```SQL
+JPQL :
+select
+	team.name,
+	avg(member1.age) 
+from
+	Member member1   
+inner join
+	member1.team as team 
+group by
+	team.name
+
+SQL :	
+select
+	team1_.name as col_0_0_,
+	avg(cast(member0_.age as double)) as col_1_0_ 
+from
+	member member0_ 
+inner join
+	team team1_ 
+		on member0_.team_id=team1_.team_id 
+group by
+	team1_.name
+
+name = teamA
+    age avg = 15.0
+name = teamB
+    age avg = 35.0
 ```
 
 <br><br>
