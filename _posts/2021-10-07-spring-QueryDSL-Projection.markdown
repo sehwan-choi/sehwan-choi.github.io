@@ -409,6 +409,139 @@ userDto = UserDto(name=member4, age=40)
 > 주의! <br>
 만일 필드명이 맞지 않는경우 Dto의 값은 null 혹은 0으로 값이 채워진다.
 
+<br><br>
+
+## @QueryProjection
+
+이 방법은 컴파일러로 타입을 체크할 수 있으므로 가장 안전한 방법이다. 다만 DTO에 QueryDSL 어노테이션을 유지해야 하는 점과 DTO까지 Q 파일을 생성해야 하는 단점이 있다. <br>
+
+- Q 파일 생성
+
+1. 사용할 생성자에 @QueryProjection 어노테이션을 추가한다.
+
+```java
+@Getter
+@Setter
+@ToString(of = {"username","age"})
+public class MemberDto {
+
+    private String username;
+    private int age;
+
+    public MemberDto() {
+    }
+
+    @QueryProjection    // @QueryProjection 어노테이션을 추가한다.
+    public MemberDto(String username, int age) {
+        this.username = username;
+        this.age = age;
+    }
+}
+```
+
+2. 아래의 사진과 같이 우측 Gradle -> querydsl -> Tasks -> other -> compileQuerydsl 실행
+
+![그림1](https://sehwan-choi.github.io/assets/img/spring/QueryDSL/jpa4.jpg)
+
+3. 아래의 사진과 같이 build -> generated -> querydsl -> study.querydsl -> dto -> QMemberDto 생성되었는지 확인. <br>
+
+참고로 querydsl -> study.querydsl 이부분은 각각 프로젝트마다 Group, Artifact명이 다르기 때문에 각자 생성된 이름을 따라가면 된다.
+
+![그림1](https://sehwan-choi.github.io/assets/img/spring/QueryDSL/jpa5.jpg)
+
+<br><br>
+
+- @QueryProjection 사용 예제
+
+```java
+@Getter
+@Setter
+@ToString(of = {"username","age"})
+public class MemberDto {
+
+    private String username;
+    private int age;
+
+    public MemberDto() {
+    }
+
+    @QueryProjection
+    public MemberDto(String username, int age) {
+        this.username = username;
+        this.age = age;
+    }
+}
+
+@SpringBootTest
+@Transactional
+public class QuerydslBasicTest {
+    
+    JPAQueryFactory queryFactory;
+
+    @Test
+    public void findDtoByQueryProjection() {
+        List<MemberDto> result = queryFactory
+                .select(new QMemberDto(member.username, member.age))
+                .from(member)
+                .fetch();
+
+        for (MemberDto memberDto : result) {
+            System.out.println("memberDto = " + memberDto);
+        }
+    }
+}
+```
+
+- 결과
+
+```sql
+JPQL :
+select
+    member1.username,
+    member1.age 
+from
+    Member member1
+
+SQL :
+select
+    member0_.username as col_0_0_,
+    member0_.age as col_1_0_ 
+from
+    member member0_
+
+memberDto = MemberDto(username=member1, age=10)
+memberDto = MemberDto(username=member2, age=20)
+memberDto = MemberDto(username=member3, age=30)
+memberDto = MemberDto(username=member4, age=40)
+```
+
+<br><br>
+
+## @QueryProjection 방법과 Setter, 필드, 생성자 접근방법의 차이점
+
+```
+import com.querydsl.core.annotations.QueryProjection;
+```
+@QueryProjection 은 위와 같이 querydsl의 라이브러리를 사용하고 있다. DTO는 대부분 Repository 뿐만 아니라 Service, API까지 넘겨서 사용하기 때문에 QueryDsl에 의존적이게 된다. 하지만 위의 @QueryProjection 설명과 같이 이 방법은 컴파일러로 타입을 체크할 수 있으므로 가장 안전한 방법이다. (컴파일 레벨에서 에러를 발견할 수 있다) <br>
+
+예 )
+```java
+// 생성자 접근 방식
+List<MemberDto> result = queryFactory
+        .select(Projections.constructor(MemberDto.class,
+                member.username, member.age))
+        .from(member)
+        .fetch();
+
+// @QueryProjection 방식
+List<MemberDto> result = queryFactory
+        .select(new QMemberDto(member.username, member.age))
+        .from(member)
+        .fetch();
+```
+위 두개의 차이점은 생성자 접근 방식은 Projections.constructor에서 인자로 MemberDto의 클래스 타입과, 선언된 생성자에 맞게 인자를 넘기게 되어있는데, 실수로 member.id 라는 값을 하나더 넘기게 된다면 컴파일 시점에서는 문제가 없지만 실제 동작과정에서 에러가 발생할 것이다. <br>
+반대로 @QueryProjection 방식은 QmemberDto를 생성하면서 인자를 직접 체크하기 때문에 컴파일 시점에서 에러를 잡을수 있다는 엄청난 장점이 있다.
+
 <br><br><br>
 ## References 및 사진 출처
 
