@@ -169,10 +169,6 @@ memberTeamDto = MemberTeamDto(memberId=6, username=member4, age=40, teamId=2, te
 
 위 코드와 같이 where 절을 BooleanBuilder builder = new BooleanBuilder(); 로 하나하나 붙여서 만든다.
 
-<br>
-
-위와 같이 usernameEq()와 ageEq() 메서드를 가지고 allEq()라는 메서드로 조합해서 사용할 수 있다.
-
 <br><br>
 
 # 동적 쿼리와 성능 최적화 조회 - Where절 파라미터 사용
