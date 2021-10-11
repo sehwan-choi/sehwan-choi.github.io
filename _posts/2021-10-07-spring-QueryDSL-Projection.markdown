@@ -18,6 +18,7 @@ comments: true
 	    - [필드 직접 접근](#필드-직접-접근)
 	    - [생성자 접근](#생성자-접근)
 	    - [별칭이 다를 때](#별칭이-다를-때)
+	    - [@QueryProjection](#queryprojection)
 	
 <br>
 
