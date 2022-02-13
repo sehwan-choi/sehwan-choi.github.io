@@ -150,4 +150,4 @@ ___BindingResult 가 있으면 오류 정보( FieldError )를 BindingResult 에 
 <br><br><br>
 ## References 및 사진 출처
 
-> __김영한의 실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화__
+> __김영한의 스프링 MVC 2편 - 백엔드 웹 개발 활용 기술__
