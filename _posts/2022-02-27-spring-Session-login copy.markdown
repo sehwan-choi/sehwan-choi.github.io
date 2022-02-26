@@ -272,6 +272,12 @@ public class LoginController {
 그런데 프로젝트마다 이러한 세션 개념을 직접 개발하는 것은 상당히 불편할 것이다. 그래서 서블릿도 세션개념을 지원한다. <br>
 이제 직접 만드는 세션 말고, 서블릿이 공식 지원하는 세션을 알아보자. 서블릿이 공식 지원하는 세션은 우리가 직접 만든 세션과 동작 방식이 거의 같다. 추가로 세션을 일정시간 사용하지 않으면 해당 세션을 삭제하는 기능을 제공한다.
 
+<br><br>
+
+HttpSession을 이용한 로그인 처리를 알아보고 싶다면 아래 링크의 게시물을 확인해보자.
+
+## [HttpSession을 이용한 로그인 처리](https://sehwan-choi.github.io/spring/2022/02/26/spring-HttpSession-login/)
+
 
 
 <br><br><br>
