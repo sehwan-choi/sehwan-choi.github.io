@@ -13,9 +13,10 @@ comments: true
 
 - 목차
 	- [BindingResult](#bindingresult)
-	- [BindingResult를 사용하지 않는경우](#bindingresult를_사용하지_않는경우)
-	- [BindingResult를 사용하는 경우](#bindingresult를_사용하는_경우)
+	- [BindingResult를 사용하지 않는경우](#bindingresult를-사용하지-않는경우)
+	- [BindingResult를 사용하는 경우](#bindingresult를-사용하는-경우)
 	- [주의](#주의)
+	- [@ModelAttribute vs @RequestBody](#modelattribute-vs-requestbody)
     - [결과](#결과)
     
 <br>
@@ -58,7 +59,9 @@ comments: true
 
 위와 같은 예제 코드가 있을때 결과는 어떻게 될까?
 
-![그림](https://sehwan-choi.github.io/assets/img/spring/MVC2/image2.jpg)
+<br>
+
+![그림](https://sehwan-choi.github.io/assets/img/spring/MVC2/image2.JPG)
 
 위 사진과 같을것이다. Controller에 오기전에 이미 에러가 발생한 것이다.
 
@@ -106,7 +109,9 @@ comments: true
     }
 ```
 
-![그림](https://sehwan-choi.github.io/assets/img/spring/MVC2/image3.jpg)
+<br>
+
+![그림](https://sehwan-choi.github.io/assets/img/spring/MVC2/image3.JPG)
 
 위 사진과 같이 놀랍게도, Controller까지 호출이 되는 것을 볼 수 있다.
 
@@ -133,6 +138,26 @@ Field error in object 'item' on field 'itemName': rejected value [null]; codes [
 Field error in object 'item' on field 'price': rejected value [null]; codes []; arguments []; default message [가격은 1,000 ~ 1,000,000 까지 허용합니다.]
 Field error in object 'item' on field 'quantity': rejected value [null]; codes []; arguments []; default message [수량은 최대 9,999 까지 허용합니다.]
 ```
+
+<br><br><br>
+
+# @ModelAttribute vs @RequestBody
+
+<br>
+
+HTTP 요청 파리미터를 처리하는 @ModelAttribute 는 각각의 필드 단위로 세밀하게 적용된다. 그래서
+특정 필드에 타입이 맞지 않는 오류가 발생해도 나머지 필드는 정상 처리할 수 있었다. <br>
+그렇다면 RequestBody는 어떻게 동작 될까? <br>
+API요청시 Json을 객체로 변환해주는 HttpMessageConverter 는 @ModelAttribute 와 다르게 각각의 필드 단위로 적용되는 것이 아니라, 전체 객체 단위로 적용된다. <br>
+따라서 메시지 컨버터의 작동이 성공해서 Item 객체를 만들어야 @Valid , @Validated 가 적용된다. <br>
+@ModelAttribute 는 필드 단위로 정교하게 바인딩이 적용된다. 특정 필드가 바인딩 되지 않아도 나머지
+필드는 정상 바인딩 되고, Validator를 사용한 검증도 적용할 수 있다. <br>
+@RequestBody 는 HttpMessageConverter 단계에서 JSON 데이터를 객체로 변경하지 못하면 이후
+단계 자체가 진행되지 않고 예외가 발생한다. 컨트롤러도 호출되지 않고, Validator도 적용할 수 없다.
+
+> 참고 <br>
+HttpMessageConverter 단계에서 실패하면 예외가 발생한다. <br>
+예외 발생시 원하는 모양으로 예외를 처리하는 방법은 예외 처리 부분에서 다룬다.
 
 <br><br><br>
 
