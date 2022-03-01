@@ -37,7 +37,20 @@ HandlerExceptionResolverComposite 에 다음 순서로 등록
 
 @ExceptionHandler 을 처리한다. API 예외 처리는 대부분 이 기능으로 해결한다. <br>
 
-## [@ExceptionHandler 대한 설명 보러가기](https://sehwan-choi.github.io/spring/2021/07/07/spring-HTTP-%EC%BF%A0%ED%82%A4/)
+## [@ExceptionHandler 대한 설명 보러가기](https://sehwan-choi.github.io/spring/2022/03/01/spring-API-Exception-ExceptionHandler/)
+
+<br><br>
+
+# ControllerAdvice
+
+<br>
+
+@ExceptionHandler 를 사용해서 예외를 깔끔하게 처리할 수 있게 되었지만, 정상 코드와 예외 처리 코드가 하나의 컨트롤러에 섞여 있다. 이것을 해결시켜줄 기술이다.
+
+
+## [@ControllerAdvice 대한 설명 보러가기](https://sehwan-choi.github.io/spring/2022/03/01/spring-API-Exception-ExceptionHandler/)
+
+
 
 <br><br>
 
@@ -49,7 +62,7 @@ HandlerExceptionResolverComposite 에 다음 순서로 등록
 HTTP 상태 코드를 지정해준다. <br>
 예) @ResponseStatus(value = HttpStatus.NOT_FOUND) <br>
 
-## [@ResponseStatusExceptionResolver 대한 설명 보러가기](https://sehwan-choi.github.io/spring/2021/07/07/spring-HTTP-%EC%BF%A0%ED%82%A4/)
+## [@ResponseStatusExceptionResolver 대한 설명 보러가기](https://sehwan-choi.github.io/spring/2022/03/01/spring-API-Exception-ResponseStatusExceptionResolver/)
 
 <br><br>
 
@@ -59,7 +72,7 @@ HTTP 상태 코드를 지정해준다. <br>
 
 스프링 내부 기본 예외를 처리한다. <br>
 
-## [@DefaultHandlerExceptionResolver 대한 설명 보러가기](https://sehwan-choi.github.io/spring/2021/07/07/spring-HTTP-%EC%BF%A0%ED%82%A4/)
+## [@DefaultHandlerExceptionResolver 대한 설명 보러가기](https://sehwan-choi.github.io/spring/2022/03/01/spring-API-Exception-DefaultHandlerExceptionResolver/)
 
 <br><br><br>
 ## References 및 사진 출처
