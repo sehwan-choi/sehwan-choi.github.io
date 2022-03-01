@@ -2,7 +2,7 @@
 layout: post
 title:  "Spring API 예외 처리"
 subtitle:   "Spring API 예외 처리"
-date:   2022-03-02 12:56:27 +0900
+date:   2022-03-02 00:56:27 +0900
 categories: spring
 tags: spring Exception
 comments: true
@@ -13,6 +13,7 @@ comments: true
 
 - 목차
     - [API 예외 처리 - 스프링이 제공하는 ExceptionResolver](#api-예외-처리---스프링이-제공하는-exceptionresolver)
+    - [ControllerAdvice](#controlleradvice)
     - [EexceptionHandlerExceptionResolver](#exceptionhandlerexceptionresolver)
     - [ResponseStatusExceptionResolver](#responsestatusexceptionresolver)
     - [DefaultHandlerExceptionResolver](#defaulthandlerexceptionresolver)
