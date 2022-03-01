@@ -12,6 +12,10 @@ comments: true
 <br>
 
 - 목차
+    - [서블릿 예외 처리 - 필터](#서블릿-예외-처리---필터)
+    - [예외 발생과 오류 페이지 요청 흐름](#예외-발생과-오류-페이지-요청-흐름)
+    - [DispatcherType](#dispatchertype)
+    - [필터와 DispatcherType](#필터와-dispatchertype)
     - [로그 확인](#로그-확인)
 
      
@@ -153,7 +157,7 @@ DispatcherType.ERROR);
 
 <br>
 
-# 로그 결과
+# 로그 확인
 ```xml
 2022-03-01 18:10:40.719  INFO 37632 --- [nio-8080-exec-1] hello.exception.Filter.LogFilter         : REQUEST [fc8b7f5f-9999-46be-a8ff-a6b77f5acd99][REQUEST][/error-ex] <- DispatcherType이 REQUEST이다
 2022-03-01 18:10:40.741  INFO 37632 --- [nio-8080-exec-1] hello.exception.Filter.LogFilter         : filter exception Request processing failed; nested exception is java.lang.RuntimeException: 예외 발생!
