@@ -12,7 +12,7 @@ comments: true
 <br>
 
 - 목차
-    - [FormatterFormatter](#formatter)
+    - [Formatter](#formatter)
         - [웹 애플리케이션에서 객체를 문자로, 문자를 객체로 변환하려면?](#웹-애플리케이션에서-객체를-문자로-문자를-객체로-변환하려면)
         - [Locale](#locale)
     - [Converter vs Formatter](#converter-vs-formatter)
