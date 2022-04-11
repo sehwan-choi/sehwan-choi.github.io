@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: Spring
-slug: spring
-category: spring
+title: Review
+slug: review
+category: review
 menu: false
 order: 1
 ---
