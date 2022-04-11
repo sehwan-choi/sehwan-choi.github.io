@@ -2,7 +2,7 @@
 layout: post
 title:  "[Basic] Python 핵심 정리"
 subtitle:   "Insight, back to basics"
-categories: review
+categories: etc
 tags: ml data science insight analysis basics modeling practice
 comments: true
 ---
