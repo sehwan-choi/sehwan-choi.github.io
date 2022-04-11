@@ -8,11 +8,4 @@ tags: review cleancode
 comments: true
 ---
 
-
-<br>
-
-- 목차
-    - [](#)
-
-
-# Test
+test

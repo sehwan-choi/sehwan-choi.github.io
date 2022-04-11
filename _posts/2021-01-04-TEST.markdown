@@ -6,12 +6,3 @@ categories: review
 ---
 
 Hi Nice meet you!
-
-
-<br>
-
-- 목차
-    - [](#)
-
-
-# Test
