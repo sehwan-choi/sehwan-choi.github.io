@@ -3,7 +3,7 @@ layout: post
 title:  "Github Gist에서 마크다운 형식(Markdown) 사용 시 유용한 팁"
 subtitle:   "Github Gist에서 마크다운 형식(Markdown) 사용 시 유용한 팁"
 date:   2021-07-05 12:35:27 +0900
-categories: etc
+categories: review
 tags: markdown
 comments: true
 ---
