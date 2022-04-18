@@ -113,7 +113,7 @@ API를 만들 때 이 유연성을 응용하면 구현 클래스를 공개하지
 
 <br>
 
-![그림1](https://sehwan-choi.github.io/assets/img/review/effectiveJava/page1/image.JPG)
+![그림1](https://sehwan-choi.github.io/assets/img/review/effectiveJava/page1/subtitle/image.JPG)
 
 위 사진과 같이 반환 타입의 하위 타입이기만 하면 어떤 클래스의 객체를 반환하든 상관없다. 클라이언트는 팩터리가 건네주는 객체가 어느 클래스의 인스턴스인지 알 수도 없고 알 필요도 없다.<br>
 심지어 또 다들 클래스의 객체를 반환해도 된다.<br>
@@ -195,7 +195,7 @@ JDBC(Java Database Connectivity)의 경우 서비스 제공자 프레임워크�
 
 # 정적 팩터리 명명 방식
 
-![그림1](https://sehwan-choi.github.io/assets/img/review/effectiveJava/page1/image2.jpg)
+![그림1](https://sehwan-choi.github.io/assets/img/review/effectiveJava/page1/subtitle/image2.jpg)
 
 <br><br>
 
