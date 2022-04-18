@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Review Effective Java 1page Title - 생성자 대신 정적 팩터리 메서드를 고려하라"
-subtitle:   "Review Effective Java 1page Title - 생성자 대신 정적 팩터리 메서드를 고려하라"
+title:  "Review Effective Java page1 - 생성자 대신 정적 팩터리 메서드를 고려하라"
+subtitle:   "Review Effective Java page1 - 생성자 대신 정적 팩터리 메서드를 고려하라"
 date:   2022-04-18 23:49:27 +0900
 categories: review
 tags: review effectivejava
